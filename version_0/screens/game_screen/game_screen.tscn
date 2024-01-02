@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://brpybismj2kqp"]
+
+[ext_resource type="Script" path="res://version_1/screens/game_screen/game_screen.gd" id="1_cuyb0"]
+[ext_resource type="Resource" uid="uid://bjmhdxd8fif0v" path="res://data/levels/level_1.tres" id="2_a0c6j"]
+[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/background_scene_W1.tscn" id="3_ywd2e"]
+[ext_resource type="Theme" uid="uid://dhvcitm7whn1m" path="res://version_1/screens/game_screen/controls/controls_theme.tres" id="4_6y4rx"]
+[ext_resource type="Script" path="res://version_1/screens/game_screen/controls/level_button/level_button.gd" id="5_cy238"]
+[ext_resource type="Resource" uid="uid://2hwkhb7opcpc" path="res://data/levels/level_2.tres" id="6_nnmtw"]
+[ext_resource type="Resource" uid="uid://dg3pk7lei5hcd" path="res://data/levels/level_3.tres" id="7_6pwdt"]
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cuyb0")
+level = ExtResource("2_a0c6j")
+
+[node name="BackgroundScene" parent="." instance=ExtResource("3_ywd2e")]
+layout_mode = 1
+
+[node name="Controls" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 122.0
+offset_top = 425.0
+offset_right = 625.0
+offset_bottom = 1025.0
+theme = ExtResource("4_6y4rx")
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Controls"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 126.0
+offset_right = 177.0
+offset_bottom = 227.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level" type="Label" parent="Controls/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Level
+"
+
+[node name="LevelButtonsContainer" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Level1Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/HBoxContainer/LevelButtonsContainer"]
+layout_mode = 2
+text = "1"
+script = ExtResource("5_cy238")
+level = ExtResource("2_a0c6j")
+
+[node name="Level2Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/HBoxContainer/LevelButtonsContainer"]
+layout_mode = 2
+text = "2"
+script = ExtResource("5_cy238")
+level = ExtResource("6_nnmtw")
+
+[node name="Level3Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/HBoxContainer/LevelButtonsContainer"]
+layout_mode = 2
+text = "3
+"
+script = ExtResource("5_cy238")
+level = ExtResource("7_6pwdt")
+
+[node name="PlayAnim1Button" type="Button" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play 1st anim"
+
+[node name="PlayAnim2Button" type="Button" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play 2nd anim"

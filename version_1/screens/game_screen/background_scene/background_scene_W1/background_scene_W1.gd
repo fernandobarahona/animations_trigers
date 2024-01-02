@@ -1,0 +1,3 @@
+class_name BackgroundSceneW1_V1 extends BackgroundScene_V1
+
+

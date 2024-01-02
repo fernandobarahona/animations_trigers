@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://du30o3dwdk6yc"]
+
+[ext_resource type="Script" path="res://version_1/screens/game_screen/game_screen.gd" id="1_fagm0"]
+[ext_resource type="PackedScene" uid="uid://bkhds6kw3t8tq" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/background_scene_W1.tscn" id="1_ltl24"]
+[ext_resource type="Resource" uid="uid://bjmhdxd8fif0v" path="res://data/levels/level_1.tres" id="2_wkx4l"]
+[ext_resource type="Theme" uid="uid://dhvcitm7whn1m" path="res://version_1/screens/game_screen/controls/controls_theme.tres" id="3_gxegp"]
+[ext_resource type="Script" path="res://version_1/screens/game_screen/controls/level_button/level_button.gd" id="5_vp6py"]
+[ext_resource type="Resource" uid="uid://2hwkhb7opcpc" path="res://data/levels/level_2.tres" id="6_t5w88"]
+[ext_resource type="Resource" uid="uid://dg3pk7lei5hcd" path="res://data/levels/level_3.tres" id="7_0nxp7"]
+[ext_resource type="PackedScene" uid="uid://cjlghr88lktnj" path="res://version_1/screens/game_screen/controls/world_button/world_button.tscn" id="8_0x6cu"]
+[ext_resource type="Resource" uid="uid://dnrnf25ys60so" path="res://data/worlds/w1.tres" id="9_6jmw1"]
+[ext_resource type="Resource" uid="uid://bbgoy44rlnwj4" path="res://data/worlds/w2.tres" id="10_wivf5"]
+
+[node name="GameScreenV1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fagm0")
+level = ExtResource("2_wkx4l")
+
+[node name="BackgroundScene" parent="." instance=ExtResource("1_ltl24")]
+layout_mode = 1
+
+[node name="Controls" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 122.0
+offset_top = 425.0
+offset_right = 625.0
+offset_bottom = 1025.0
+theme = ExtResource("3_gxegp")
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Controls"]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 126.0
+offset_right = 177.0
+offset_bottom = 227.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/CenterContainer"]
+layout_mode = 2
+
+[node name="LevelHBC" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Level" type="Label" parent="Controls/CenterContainer/VBoxContainer/LevelHBC"]
+layout_mode = 2
+text = "Level
+"
+
+[node name="LevelButtonsContainer" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer/LevelHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Level1Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/LevelHBC/LevelButtonsContainer"]
+layout_mode = 2
+text = "1"
+script = ExtResource("5_vp6py")
+level = ExtResource("2_wkx4l")
+
+[node name="Level2Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/LevelHBC/LevelButtonsContainer"]
+layout_mode = 2
+text = "2"
+script = ExtResource("5_vp6py")
+level = ExtResource("6_t5w88")
+
+[node name="Level3Button" type="Button" parent="Controls/CenterContainer/VBoxContainer/LevelHBC/LevelButtonsContainer"]
+layout_mode = 2
+text = "3
+"
+script = ExtResource("5_vp6py")
+level = ExtResource("7_0nxp7")
+
+[node name="WorldHBC" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Controls/CenterContainer/VBoxContainer/WorldHBC"]
+layout_mode = 2
+text = "World
+"
+
+[node name="WorldButtonsContainer" type="HBoxContainer" parent="Controls/CenterContainer/VBoxContainer/WorldHBC"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Button" parent="Controls/CenterContainer/VBoxContainer/WorldHBC/WorldButtonsContainer" instance=ExtResource("8_0x6cu")]
+layout_mode = 2
+world = ExtResource("9_6jmw1")
+
+[node name="Button3" parent="Controls/CenterContainer/VBoxContainer/WorldHBC/WorldButtonsContainer" instance=ExtResource("8_0x6cu")]
+layout_mode = 2
+text = "2"
+world = ExtResource("10_wivf5")
+
+[node name="PlayAnim1Button" type="Button" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play 1st anim"
+
+[node name="PlayAnim2Button" type="Button" parent="Controls/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play 2nd anim"
+
+[connection signal="pressed" from="Controls/CenterContainer/VBoxContainer/PlayAnim1Button" to="." method="_on_play_anim_1_button_pressed"]
+[connection signal="pressed" from="Controls/CenterContainer/VBoxContainer/PlayAnim2Button" to="." method="_on_play_anim_2_button_pressed"]

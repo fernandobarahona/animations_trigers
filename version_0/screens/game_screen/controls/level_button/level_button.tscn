@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpc2u7agwymdn"]
+
+[ext_resource type="Script" path="res://version_1/screens/game_screen/controls/level_button/level_button.gd" id="1_sm0ti"]
+
+[node name="LevelButton" type="Button"]
+script = ExtResource("1_sm0ti")

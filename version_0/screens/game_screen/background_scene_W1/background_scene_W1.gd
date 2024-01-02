@@ -1,0 +1,1 @@
+class_name BackgroundSceneW1_V0 extends Control

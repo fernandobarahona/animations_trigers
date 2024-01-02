@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="World" load_steps=3 format=3 uid="uid://bbgoy44rlnwj4"]
+
+[ext_resource type="PackedScene" uid="uid://osthl1b4vk4k" path="res://version_1/screens/game_screen/background_scene/background_scene_W2/background_scene_W2.tscn" id="1_2w15q"]
+[ext_resource type="Script" path="res://data/worlds/world.gd" id="1_5lhfd"]
+
+[resource]
+script = ExtResource("1_5lhfd")
+background_scene = ExtResource("1_2w15q")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjlghr88lktnj"]
+
+[ext_resource type="Script" path="res://version_1/screens/game_screen/controls/world_button/world_button.gd" id="1_i4evp"]
+
+[node name="Button" type="Button"]
+text = "1"
+script = ExtResource("1_i4evp")

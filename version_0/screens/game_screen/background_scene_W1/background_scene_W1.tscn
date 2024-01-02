@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://do3ka1x52nn2j"]
+
+[ext_resource type="Script" path="res://version_0/screens/game_screen/background_scene_W1/background_scene_W1.gd" id="1_7r1xx"]
+[ext_resource type="Texture2D" uid="uid://p6x1lvr1r47e" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/assets/8361400.jpg" id="2_4ho4h"]
+[ext_resource type="Texture2D" uid="uid://c68dj2nju54b2" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/assets/32376918_7915224.svg" id="3_5p7yj"]
+[ext_resource type="Texture2D" uid="uid://bwcsuxxfry2fw" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/assets/33029229_7945730.jpg" id="4_co3tw"]
+[ext_resource type="Texture2D" uid="uid://dqv5qxh7m7amg" path="res://version_1/screens/game_screen/background_scene/background_scene_W1/assets/14263867_1911.i516.026..mineral growth game design.jpg" id="5_vhrcn"]
+
+[node name="BackgroundSceneW1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7r1xx")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 512)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("2_4ho4h")
+
+[node name="moon" type="Sprite2D" parent="."]
+position = Vector2(147, 105.5)
+texture = ExtResource("3_5p7yj")
+hframes = 4
+vframes = 2
+region_enabled = true
+region_rect = Rect2(42, 53.128, 666, 391.198)
+
+[node name="fire" type="Sprite2D" parent="."]
+position = Vector2(1184, 832)
+scale = Vector2(0.375433, 0.375433)
+texture = ExtResource("4_co3tw")
+hframes = 3
+vframes = 3
+frame = 8
+
+[node name="moon2" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(366, 107)
+texture = ExtResource("3_5p7yj")
+hframes = 4
+vframes = 2
+region_enabled = true
+region_rect = Rect2(42, 53.128, 666, 391.198)
+
+[node name="fire2" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(1611, 833.5)
+scale = Vector2(0.375433, 0.375433)
+texture = ExtResource("4_co3tw")
+hframes = 3
+vframes = 3
+frame = 8
+
+[node name="ice" type="Sprite2D" parent="."]
+position = Vector2(723, 137.5)
+scale = Vector2(0.0859999, 0.0859999)
+texture = ExtResource("5_vhrcn")
+hframes = 3
+vframes = 2
+region_enabled = true
+region_rect = Rect2(109.625, 353.882, 5810.18, 3238.15)
+
+[node name="ice2" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(931, 137.5)
+scale = Vector2(0.0859999, 0.0859999)
+texture = ExtResource("5_vhrcn")
+hframes = 3
+vframes = 2
+region_enabled = true
+region_rect = Rect2(109.625, 353.882, 5810.18, 3238.15)
