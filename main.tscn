@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://8h60qho0ltoc"]
+
+[ext_resource type="PackedScene" uid="uid://du30o3dwdk6yc" path="res://screens/game_screen/game_screen.tscn" id="1_3eoix"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameScreen" parent="." instance=ExtResource("1_3eoix")]
+layout_mode = 1
